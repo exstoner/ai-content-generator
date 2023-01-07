@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <link rel="icon" href="/static/favicon/favicon.svg" />
+
+    <title>Tweets | AI Content Generator</title>
+
+    <style></style>
+  </head>
+  <body>
+    <section id="services" class="module">
+      <div class="container">
+        <!-- MODULE TITLE -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="module-title font-alt">AI Content Generator</h2>
+          </div>
+        </div>
+        <!-- MODULE TITLE END -->
+      </div>
+      <!-- NAVIGATION MENU -->
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="{{ url_for('index') }}"
+              ><li><ion-icon name="home-outline"></ion-icon> Home Page</li></a
+            >
+            <a href="{{ url_for('productDescription') }}"
+              ><li>
+                <ion-icon name="logo-amazon"></ion-icon> Product Description
+              </li></a
+            >
+            <a href="{{ url_for('jobDescription') }}"
+              ><li>
+                <ion-icon name="logo-linkedin"></ion-icon> Job Descriptions
+              </li></a
+            >
+            <a href="{{ url_for('tweetIdeas') }}"
+              ><li><ion-icon name="logo-twitter"></ion-icon> Tweets</li></a
+            >
+            <a href="{{ url_for('coldEmails') }}"
+              ><li><ion-icon name="mail"></ion-icon> Cold Email Template</li></a
+            >
+            <a href="{{ url_for('socialMedia') }}"
+              ><li>
+                <ion-icon name="megaphone"></ion-icon> Social Media Adverts
+              </li></a
+            >
+            <a href="{{ url_for('videoIdeas') }}"
+              ><li>
+                <ion-icon name="logo-youtube"></ion-icon> Youtube Video Ideas
+              </li></a
+            >
+          </ul>
+        </div>
+      </nav>
+      <!-- NAVIGATION MENU  END-->
+
+      <!-- USER INPUT -->
+      <main class="container">
+        <div class="bg-light p-5 rounded mt-5">
+          <h1><ion-icon name="logo-twitter"></ion-icon> Generate Tweets</h1>
+          <p class="lead">
+            Start generating tweet ideas with hashtags for your online social
+            media campaigns on twitter. Create endless unique tweet ideas, no
+            more writers block.
+          </p>
+
+          <h2>What is your tweet about?</h2>
+
+          <form class="" action="/tweet-ideas" method="post">
+            <div class="mb-3">
+              <label class="form-label">Tweet Prompt</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tweetIdeas"
+                placeholder="eg. Web Developemt"
+              />
+              <div class="form-text">
+                Enter topic or subject you would like to generate tweets for.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-secondary btn-lg">
+              <ion-icon name="create-outline"></ion-icon> GET RECOMMENDATIONS
+            </button>
+          </form>
+        </div>
+        <!-- USER INPUT END -->
+        <!-- GENERATED AI CONTENT -->
+        <div class="p-3 rounded">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="text-primary">{{prompt}}</h3>
+              <p class="lead">{{openAIAnswer}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- GENERATED AI CONTENT END-->
+      </main>
+    </section>
+
+    <!-- DIVIDER -->
+    <hr class="divider" />
+    <!-- /DIVIDER -->
+
+    <section id="contact" class="module">
+      <div class="container">
+        <!-- MODULE TITLE -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2
+              class="module-title font-alt"
+              style="font-size: 30px; letter-spacing: 2px"
+            >
+              This is a web application created in Flask that can be used to
+              generate random content using Artificial Intelligence API from
+              OpenAI.<br /><br />
+              <a href="https://github.com/b3nhassoun" target="_blank"
+                ><ion-icon name="logo-github"></ion-icon> b3nhassoun</a
+              >
+            </h2>
+          </div>
+        </div>
+        <!-- /MODULE TITLE -->
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
